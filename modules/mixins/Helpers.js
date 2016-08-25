@@ -87,10 +87,12 @@ var Helpers = {
           if(this.props.onSetActive) {
             var that =this
             setTimeout(function(){
-              if(that.state.active){
-                that.props.onSetActive(to);
-              }
-            },this.props.duration)
+              var that =this
+                setTimeout(function(){
+                  if(that.state.active){
+                    that.props.onSetActive(to);
+                  }
+                },this.props.duration)
           }
 
           scrollSpy.updateStates();
@@ -146,7 +148,12 @@ var Helpers = {
               this.setState({ active : true });
 
               if(this.props.onSetActive) {
-                this.props.onSetActive(to);
+                var that =this
+                setTimeout(function(){
+                  if(that.state.active){
+                    that.props.onSetActive(to);
+                  }
+                },this.props.duration)
               }
 
               scrollSpy.updateStates();
