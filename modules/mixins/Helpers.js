@@ -87,12 +87,10 @@ var Helpers = {
           if(this.props.onSetActive) {
             var that =this
             setTimeout(function(){
-              var that =this
-                setTimeout(function(){
-                  if(that.state.active){
-                    that.props.onSetActive(to);
-                  }
-                },this.props.duration)
+              if(that.state.active){
+                that.props.onSetActive(to);
+              }
+            },this.props.duration)
           }
 
           scrollSpy.updateStates();
